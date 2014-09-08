@@ -16,6 +16,14 @@ public class ArticleListPage {
 		this.html = html;
 	}
 
+	public boolean isTop(){
+		if (extractPreviousListPage()==null){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
 	public List<PTTArticle> listArticles() {
 		List<PTTArticle> result = new ArrayList<PTTArticle>();
 		Document doc = Jsoup.parse(html);
